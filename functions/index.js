@@ -4,7 +4,6 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const logger = require("morgan");
 const cors = require("cors");
-const socketio = require("socket.io");
 const databaseMiddleware = require("./middleware/databaseMiddleware");
 const errorHandlerMiddleware = require("./middleware/errorHandlerMiddleware");
 const connectMongoDb = require("./db/db");
@@ -14,29 +13,31 @@ const yaml = require("yaml");
 const fs = require("fs");
 const app = express();
 const server = http.createServer(app);
+const { Server } = require("socket.io");
 const functions = require("firebase-functions");
 require("dotenv").config();
 
-// WebClient from Public
-// Monolith Website
-// app.use(express.static(path.join(__dirname, "public")));
-
 // Middleware
 app.use(logger("dev"));
-app.use(cors({ origin: "*" }));
+
+// Set up CORS for your Express app
+app.use(cors({ origin: true, methods: "GET,HEAD,PUT,PATCH,POST,DELETE" }));
+
 app.use(bodyParser.json());
 app.use(databaseMiddleware);
 
-const io = socketio(server, {
+// Create a Socket.IO server with CORS settings
+const io = new Server(server, {
   cors: {
     origin: "*",
+    methods: ["GET", "POST"],
   },
 });
 
 // Socket connection
 configureSocket(io);
 
-// APi Documentation
+// API Documentation
 const openApiPath = "api-docs.yaml";
 const readApiFile = fs.readFileSync(openApiPath, "utf8");
 const swaggerDocs = yaml.parse(readApiFile);
@@ -56,11 +57,11 @@ app.use("/api/v1/users", userRouter);
 app.use("/api/v1/rooms", roomRouter);
 app.use("/api/v1/participants", participantRouter);
 
-// Check connection to database
+// Check connection to the database
 async function connectDatabase() {
   try {
     await connectMongoDb();
-    console.log("Succesfully connected to MongoDB");
+    console.log("Successfully connected to MongoDB");
   } catch (error) {
     console.error(error);
   }

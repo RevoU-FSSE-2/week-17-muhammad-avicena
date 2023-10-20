@@ -14,7 +14,6 @@ const fs = require("fs");
 const app = express();
 const server = http.createServer(app);
 const socketIo = require("socket.io");
-
 require("dotenv").config();
 
 // WebClient from Public
@@ -24,7 +23,6 @@ require("dotenv").config();
 // Middleware
 app.use(logger("dev"));
 app.use(cors({ origin: "*" }));
-
 app.use(bodyParser.json());
 app.use(databaseMiddleware);
 
