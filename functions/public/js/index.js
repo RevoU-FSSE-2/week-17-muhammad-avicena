@@ -1,3 +1,5 @@
+const URL_API = "https://us-central1-revou-fullstack.cloudfunctions.net/week_17_avicena";
+
 $("#signInButton").on("click", function (e) {
   e.preventDefault();
   const email = document.getElementById("username").value;
@@ -20,7 +22,7 @@ $("#signInButton").on("click", function (e) {
     },
   });
 
-  fetch("/api/v1/auth/login", {
+  fetch(`${URL_API}/api/v1/auth/login`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -99,7 +101,7 @@ $("#registerButton").on("click", function (e) {
     gender: gender,
   };
 
-  fetch("/api/v1/auth/register", {
+  fetch(`${URL_API}/api/v1/auth/register`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

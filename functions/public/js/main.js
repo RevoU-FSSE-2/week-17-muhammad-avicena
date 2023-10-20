@@ -3,6 +3,8 @@ const chatMessages = document.querySelector(".chat-messages");
 const room = document.getElementById("room-name");
 const userList = document.getElementById("users");
 
+const URL_API = "https://us-central1-revou-fullstack.cloudfunctions.net/week_17_avicena";
+
 async function fetchData() {
   try {
     const { joinRoom } = Qs.parse(location.search, {
@@ -20,7 +22,7 @@ async function fetchData() {
     });
 
     const response = await fetch(
-      `/api/v1/participants?roomName=${joinRoom}&username=${usernameData}`
+      `${URL_API}/api/v1/participants?roomName=${joinRoom}&username=${usernameData}`
     );
     const { data } = await response.json();
 
@@ -136,7 +138,7 @@ async function fetchData() {
     }
   } catch (error) {
     console.log(error.message);
-    window.location.href = "../dashboard.html";
+    // window.location.href = "../dashboard.html";
   }
 }
 
@@ -161,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
       cancelButtonText: "No, I still want to chat",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch("/api/v1/participants", {
+        fetch(`${URL_API}/api/v1/participants`, {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json",

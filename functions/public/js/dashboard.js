@@ -1,6 +1,9 @@
+const URL_API =
+  "https://us-central1-revou-fullstack.cloudfunctions.net/week_17_avicena";
+
 async function populateRooms() {
   const selectElement = document.getElementById("roomName");
-  const apiEndpoint = `/api/v1/rooms`;
+  const apiEndpoint = `${URL_API}/api/v1/rooms`;
 
   const loadingSwal = Swal.fire({
     title: "Fetching data. Please wait...",
@@ -68,7 +71,7 @@ $("#joinChat").on("click", async function (e) {
 
     try {
       console.log("Login data", loginData);
-      const response = await fetch("/api/v1/participants", {
+      const response = await fetch(`${URL_API}/api/v1/participants`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
