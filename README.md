@@ -88,6 +88,15 @@ You will need a github account to clone this repository, make sure you're connec
 **Detail documentation will be shown here :** [https://deezchat.avicena.dev/api-docs](https://deezchat.avicena.dev/api-docs)
 ![swagger](./assets-github/swagger.png)
 
+## DOCKER DEPLOYMENT ⚙️
+![docker](./assets-github/docker.png)
+
+### I have successfully deployed into docker hub which is now available in public :
+- [avicenadevs/week-17-muhammad-avicena-backend - Docker hub](https://hub.docker.com/r/avicenadevs/week-17-muhammad-avicena-backend)
+- [avicenadevs/week-17-muhammad-avicena-frontend - Docker hub](https://hub.docker.com/r/avicenadevs/week-17-muhammad-avicena-frontend)
+
+![Alt text](./assets-github/docker-hub.png)
+
 ## DEPLOYMENT ⚙️
 
 ![Alt text](./assets-github/deploy.png)
