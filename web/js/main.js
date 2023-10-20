@@ -6,7 +6,9 @@ const userList = document.getElementById("users");
 const URL_API =
   "https://us-central1-revou-fullstack.cloudfunctions.net/week_17_avicena";
 
-const socket = io("https://us-central1-revou-fullstack.cloudfunctions.net/week_17_avicena");
+const socket = io(
+  "https://us-central1-revou-fullstack.cloudfunctions.net/week_17_avicena"
+);
 
 socket.on("connect", () => {
   console.log("Connected to the server");
