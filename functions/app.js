@@ -13,13 +13,13 @@ const yaml = require("yaml");
 const fs = require("fs");
 const app = express();
 const server = http.createServer(app);
-const socketIo = require("socket.io")(server);
+const socketIo = require("socket.io");
 
 require("dotenv").config();
 
 // WebClient from Public
 // Monolith Website
-app.use(express.static(path.join(__dirname, "public")));
+// app.use(express.static(path.join(__dirname, "public")));
 
 // Middleware
 app.use(logger("dev"));
