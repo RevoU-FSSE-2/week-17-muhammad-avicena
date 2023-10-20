@@ -12,6 +12,7 @@
     }
   ],
   "hosting": {
+    "site": "week-17-avicena-dev",
     "public": "web",
     "ignore": [
       "firebase.json",
