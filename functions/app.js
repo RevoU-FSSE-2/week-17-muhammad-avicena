@@ -4,7 +4,6 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const logger = require("morgan");
 const cors = require("cors");
-const socketio = require("socket.io");
 const databaseMiddleware = require("./middleware/databaseMiddleware");
 const errorHandlerMiddleware = require("./middleware/errorHandlerMiddleware");
 const connectMongoDb = require("./db/db");
@@ -14,20 +13,26 @@ const yaml = require("yaml");
 const fs = require("fs");
 const app = express();
 const server = http.createServer(app);
-const io = socketio(server);
+const socketIo = require("socket.io")(server);
+
 require("dotenv").config();
 
 // WebClient from Public
 // Monolith Website
-// app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "public")));
 
 // Middleware
 app.use(logger("dev"));
 app.use(cors({ origin: "*" }));
+
 app.use(bodyParser.json());
 app.use(databaseMiddleware);
 
-// Socket connection
+const io = socketIo(server, {
+  cors: {
+    origin: "*",
+  },
+});
 configureSocket(io);
 
 // APi Documentation
