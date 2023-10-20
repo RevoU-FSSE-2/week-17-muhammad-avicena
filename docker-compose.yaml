@@ -1,0 +1,15 @@
+version: "3"
+services:
+  frontend:
+    build:
+      context: web
+      dockerfile: Dockerfile 
+    ports:
+      - "80:80" 
+
+  backend:
+    build:
+      context: functions
+      dockerfile: Dockerfile 
+    ports:
+      - "8080:8080" 
