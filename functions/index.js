@@ -19,11 +19,12 @@ const functions = require("firebase-functions");
 require("dotenv").config();
 
 // WebClient from Public
-app.use(express.static(path.join(__dirname, "public")));
+// Monolith Website
+// app.use(express.static(path.join(__dirname, "public")));
 
 // Middleware
 app.use(logger("dev"));
-app.use(cors());
+app.use(cors({ origin: "*" }));
 app.use(bodyParser.json());
 app.use(databaseMiddleware);
 
