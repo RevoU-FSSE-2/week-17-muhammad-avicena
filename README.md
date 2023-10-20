@@ -14,10 +14,10 @@ Interested to have collaboration ? Find me on:
 
 ## INGREDIENTS I USE 📜
 
-- WebClient
+- WebClient (Web)
   - Vanila JS
   - Tailwind CSS
-- WebServer
+- WebServer (Functions)
   - Node.js
   - Express.js
   - JWT for Role-Based Access Controll
@@ -111,6 +111,6 @@ You will need a github account to clone this repository, make sure you're connec
 
 ![Alt text](./assets-github/firebase.png)
 
-The project has been successfully deployed using Railway. You can access the production version of the website by following this link: [https://deezchat-firebase.avicena.dev](https://deezchat-firebase.avicena.dev).
+The project has been successfully deployed using Firebase. You can access the production version of the website by following this link: [https://deezchat-firebase.avicena.dev](https://deezchat-firebase.avicena.dev).
 
 Feel free to explore the website and try out the different features. I appreciate any feedback and suggestions to further improve the user experience.
