@@ -66,7 +66,7 @@ You will need a github account to clone this repository, make sure you're connec
 
 ## AVAILABLE API 📰
 
-**Endpoint :** [https://deezchat.avicena.dev](https://deezchat.avicena.dev)
+**Endpoint :** [https://us-central1-revou-fullstack.cloudfunctions.net/week_17_avicena](https://us-central1-revou-fullstack.cloudfunctions.net/week_17_avicena)
 
 | Name                          | HTTP Method | Endpoint                                                                                              | Requirements                                              |
 | ----------------------------- | ----------- | ----------------------------------------------------------------------------------------------------- | --------------------------------------------------------- |
@@ -85,22 +85,32 @@ You will need a github account to clone this repository, make sure you're connec
 
 ## Swagger UI - API Documentation and Testing ⚡
 
-**Detail documentation will be shown here :** [https://deezchat.avicena.dev/api-docs](https://deezchat.avicena.dev/api-docs)
+**Detail documentation will be shown here :** [https://us-central1-revou-fullstack.cloudfunctions.net/week_17_avicena/api-docs](https://us-central1-revou-fullstack.cloudfunctions.net/week_17_avicena/api-docs)
 ![swagger](./assets-github/swagger.png)
 
 ## DOCKER DEPLOYMENT ⚙️
+
 ![docker](./assets-github/docker.png)
 
 ### I have successfully deployed into docker hub which is now available in public :
+
 - [avicenadevs/week-17-muhammad-avicena-backend - Docker hub](https://hub.docker.com/r/avicenadevs/week-17-muhammad-avicena-backend)
 - [avicenadevs/week-17-muhammad-avicena-frontend - Docker hub](https://hub.docker.com/r/avicenadevs/week-17-muhammad-avicena-frontend)
 
 ![Alt text](./assets-github/docker-hub.png)
 
-## DEPLOYMENT ⚙️
+## TWA BUILDER FOR ANDROID FEATURES
 
-![Alt text](./assets-github/deploy.png)
+![Alt text](./assets-github/TWA.png)
 
-The project has been successfully deployed using Railway. You can access the production version of the website by following this link: [https://deezchat.avicena.dev](https://deezchat.avicena.dev).
+## UNIT TESTING BY JEST
+
+![Alt text](./assets-github/unit-testing.png)
+
+## DEPLOYMENT APP IN FIREBASE⚙️
+
+![Alt text](./assets-github/firebase.png)
+
+The project has been successfully deployed using Railway. You can access the production version of the website by following this link: [https://deezchat-firebase.avicena.dev](https://deezchat-firebase.avicena.dev).
 
 Feel free to explore the website and try out the different features. I appreciate any feedback and suggestions to further improve the user experience.
