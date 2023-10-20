@@ -14,7 +14,6 @@ const yaml = require("yaml");
 const fs = require("fs");
 const app = express();
 const server = http.createServer(app);
-const io = socketio(server);
 const functions = require("firebase-functions");
 require("dotenv").config();
 
@@ -27,6 +26,12 @@ app.use(logger("dev"));
 app.use(cors({ origin: "*" }));
 app.use(bodyParser.json());
 app.use(databaseMiddleware);
+
+const io = socketio(server, {
+  cors: {
+    origin: "*",
+  },
+});
 
 // Socket connection
 configureSocket(io);
