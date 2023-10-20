@@ -9,8 +9,7 @@
     "logs": "firebase functions:log",
     "dev": "nodemon index.js",
     "dev:2": "nodemon app.js",
-    "test": "npx jest --verbose",
-    "build": "webpack --config webpack.config.js"
+    "test": "npx jest --verbose"
   },
   "engines": {
     "node": "18"
